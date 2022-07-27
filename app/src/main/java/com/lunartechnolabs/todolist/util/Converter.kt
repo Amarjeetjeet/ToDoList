@@ -1,4 +1,4 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.util
 
 import androidx.room.TypeConverter
 import java.util.*

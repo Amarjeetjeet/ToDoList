@@ -1,5 +1,7 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.data.repo
 
+import com.lunartechnolabs.todolist.data.local.AppDao
+import com.lunartechnolabs.todolist.domain.model.Task
 import javax.inject.Inject
 
 class RoomRepository @Inject constructor(private val appDao: AppDao) {

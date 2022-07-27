@@ -1,4 +1,4 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.domain.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

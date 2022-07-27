@@ -1,6 +1,7 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.data.local
 
 import androidx.room.*
+import com.lunartechnolabs.todolist.domain.model.Task
 
 
 @Dao

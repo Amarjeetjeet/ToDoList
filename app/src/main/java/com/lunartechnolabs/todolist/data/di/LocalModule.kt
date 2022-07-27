@@ -1,7 +1,11 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.data.di
 
 import android.app.Application
 import androidx.room.TypeConverters
+import com.lunartechnolabs.todolist.data.local.AppDao
+import com.lunartechnolabs.todolist.util.Converter
+import com.lunartechnolabs.todolist.util.ListConverter
+import com.lunartechnolabs.todolist.data.db.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,7 +14,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-@TypeConverters(Converter::class,ListConverter::class)
+@TypeConverters(Converter::class, ListConverter::class)
 object LocalModule {
 
         @Singleton

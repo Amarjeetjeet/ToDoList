@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/dashBoardFragment">
+
+    <fragment
+        android:id="@+id/dashBoardFragment"
+        android:name="com.lunartechnolabs.todolist.presentation.dashboard.DashBoardFragment"
+        android:label="fragment_dash_board"
+        tools:layout="@layout/fragment_dash_board" >
+        <action
+            android:id="@+id/action_dashBoardFragment_to_editOrAddFragment"
+            app:destination="@id/editOrAddFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editOrAddFragment"
+        android:name="com.lunartechnolabs.todolist.presentation.editordelete.EditOrAddFragment"
+        android:label="fragment_edit_or_add"
+        tools:layout="@layout/fragment_edit_or_add" />
+</navigation>

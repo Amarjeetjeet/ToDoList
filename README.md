@@ -1,5 +1,6 @@
 ## ToDoList
-#💡 Tech stack & Modern Library Tools
+
+💡 Tech stack & Modern Library Tools
 - Kotlin, Coroutines + Flow for asynchronous
 - Dependency injection with Hilt
 - Jetpack Navigation
@@ -9,7 +10,7 @@
 - Material-Components - Material design components
 - Leak Canary - memory leak detection library for Android
 
-#💡 Features
+💡 Features
 - Task Add
 - Task Edit
 - Task Delete

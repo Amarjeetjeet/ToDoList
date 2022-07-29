@@ -25,19 +25,17 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
 
         when (task.priority) {
             "1" -> {
-                holder.binding.cardView.setCardBackgroundColor(Color.RED)
+                holder.binding.title.setTextColor(Color.RED)
             }
             "2" -> {
-                holder.binding.cardView.setCardBackgroundColor(Color.GREEN)
+                holder.binding.title.setTextColor(Color.GREEN)
             }
             else -> {
-                holder.binding.cardView.setCardBackgroundColor(Color.YELLOW)
+                holder.binding.title.setTextColor(Color.YELLOW)
             }
         }
 
-        holder.binding.shortDesc.text = task.title
         holder.binding.title.text = task.title
-        holder.binding.description.text = task.detail
 
         holder.itemView.setOnClickListener {
             listener.itemClick(it, position, task)
@@ -46,6 +44,11 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         holder.itemView.setOnLongClickListener {
             listener.itemClickLong(it, position, task)
             false
+        }
+
+        holder.binding.checkbox.setOnClickListener{
+            listener.btnClick(it,position,task)
+            notifyDataSetChanged()
         }
 
     }

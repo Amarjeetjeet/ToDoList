@@ -5,13 +5,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.lunartechnolabs.todolist.databinding.FragmentDashBoardBinding
 import com.lunartechnolabs.todolist.databinding.FragmentEditOrAddBinding
+import com.lunartechnolabs.todolist.domain.model.Task
+import com.lunartechnolabs.todolist.presentation.dashboard.DashBoardViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 
+@AndroidEntryPoint
 class EditOrAddFragment : Fragment() {
 
     private  var _binding: FragmentEditOrAddBinding ?= null
     private val binding get() = _binding!!
+    private val viewModel : DashBoardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +36,18 @@ class EditOrAddFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        onClickListener()
+    }
+
+    private fun onClickListener() {
+
+
+        binding.addArticleBtn.setOnClickListener {
+            binding.radioButton1.isChecked = true
+            val task = Task(binding.edtTitle.text.toString(),binding.radioGroup.checkedRadioButtonId.toString(),binding.edtBody.text.toString(),Date().time,Date().time)
+            viewModel.addArticle(task)
+            findNavController().popBackStack()
+        }
     }
 
     override fun onDestroy() {

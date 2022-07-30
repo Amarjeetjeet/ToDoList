@@ -13,10 +13,30 @@
         <action
             android:id="@+id/action_dashBoardFragment_to_editOrAddFragment"
             app:destination="@id/editOrAddFragment" />
+        <action
+            android:id="@+id/action_dashBoardFragment_to_viewTask"
+            app:destination="@id/viewTask" />
     </fragment>
     <fragment
         android:id="@+id/editOrAddFragment"
         android:name="com.lunartechnolabs.todolist.presentation.editordelete.EditOrAddFragment"
         android:label="fragment_edit_or_add"
-        tools:layout="@layout/fragment_edit_or_add" />
+        tools:layout="@layout/fragment_edit_or_add" >
+        <argument
+            android:name="TaskData"
+            app:argType="com.lunartechnolabs.todolist.domain.model.Task" />
+        <argument
+            android:name="isForUpdate"
+            app:argType="boolean" />
+    </fragment>
+    <dialog
+        android:id="@+id/viewTask"
+        android:name="com.lunartechnolabs.todolist.ViewTask"
+        android:label="fragment_view_task"
+        tools:layout="@layout/fragment_view_task" >
+        <argument
+            android:name="TaskData"
+            app:argType="com.lunartechnolabs.todolist.domain.model.Task"
+            app:nullable="true" />
+    </dialog>
 </navigation>

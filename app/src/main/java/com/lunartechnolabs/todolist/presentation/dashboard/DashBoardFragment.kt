@@ -5,12 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lunartechnolabs.todolist.R
+import com.lunartechnolabs.todolist.ViewTask
 import com.lunartechnolabs.todolist.databinding.FragmentDashBoardBinding
 import com.lunartechnolabs.todolist.domain.model.Task
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,7 +47,9 @@ class DashBoardFragment : Fragment() , TaskAdapter.OnItemClickListener{
         bindObserver()
 
         binding.floatingActionButton.setOnClickListener {
-            findNavController().navigate(R.id.action_dashBoardFragment_to_editOrAddFragment)
+            val task = Task(title = "", priority = "", detail = "", taskDate = "", taskTime = "")
+            val action = DashBoardFragmentDirections.actionDashBoardFragmentToEditOrAddFragment(task,false)
+            findNavController().navigate(action)
         }
         super.onViewCreated(view, savedInstanceState)
     }
@@ -57,14 +61,14 @@ class DashBoardFragment : Fragment() , TaskAdapter.OnItemClickListener{
     }
 
     private fun bindObserver() {
-            lifecycleScope.launchWhenCreated {
-                viewModel.offlineArticleUIState.collectLatest {
-                    when (it) {
-                        is Resource.Success -> {
-                            it.data?.let {
-                                taskAdapter.setData(it as ArrayList<Task>)
-                            }
+        lifecycleScope.launchWhenCreated {
+            viewModel.offlineArticleUIState.collectLatest {
+                when (it) {
+                    is Resource.Success -> {
+                        it.data?.let {
+                        taskAdapter.setData(it as ArrayList<Task>)
                         }
+                    }
                         is Resource.Error -> {
                         }
                         is Resource.Loading -> {
@@ -83,13 +87,25 @@ class DashBoardFragment : Fragment() , TaskAdapter.OnItemClickListener{
     }
 
     override fun itemClick(view: View, position: Int, task: Task) {
-
+        openUpdateFragment(task)
     }
 
     override fun btnClick(view: View, position: Int, task: Task) {
         viewModel.deleteArticle(task)
+        taskAdapter.notifyItemRemoved(position)
     }
 
     override fun itemClickLong(view: View, position: Int, task: Task) {
+        openViewFragment(task)
+    }
+
+    private fun openViewFragment(task: Task) {
+        val action = DashBoardFragmentDirections.actionDashBoardFragmentToViewTask(task)
+        findNavController().navigate(action)
+    }
+
+    private fun openUpdateFragment(task: Task) {
+        val action = DashBoardFragmentDirections.actionDashBoardFragmentToEditOrAddFragment(task,true)
+        findNavController().navigate(action)
     }
 }

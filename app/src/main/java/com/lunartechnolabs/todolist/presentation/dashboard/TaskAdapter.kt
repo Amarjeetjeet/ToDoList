@@ -24,14 +24,14 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         val task = taskList[position]
 
         when (task.priority) {
-            "1" -> {
+            "High" -> {
                 holder.binding.title.setTextColor(Color.RED)
             }
-            "2" -> {
+            "Medium" -> {
                 holder.binding.title.setTextColor(Color.GREEN)
             }
             else -> {
-                holder.binding.title.setTextColor(Color.YELLOW)
+                holder.binding.title.setTextColor(Color.BLACK)
             }
         }
 
@@ -47,8 +47,15 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         }
 
         holder.binding.checkbox.setOnClickListener{
+            if(taskList.isNotEmpty() && taskList.size > position) {
+                taskList.removeAt(position)
+                notifyItemRemoved(position)
+                notifyDataSetChanged()
+            }
+            if(taskList.size == 0){
+                taskList.clear()
+            }
             listener.btnClick(it,position,task)
-            notifyDataSetChanged()
         }
 
     }

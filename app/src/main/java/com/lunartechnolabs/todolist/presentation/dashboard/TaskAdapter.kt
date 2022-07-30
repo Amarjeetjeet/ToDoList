@@ -53,6 +53,7 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
                 notifyDataSetChanged()
             }
             if(taskList.size == 0){
+
                 taskList.clear()
             }
             listener.btnClick(it,position,task)

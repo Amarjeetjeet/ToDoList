@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/dashBoardFragment"
         android:name="com.lunartechnolabs.todolist.presentation.dashboard.DashBoardFragment"
-        android:label="fragment_dash_board"
+        android:label="DashBoard"
         tools:layout="@layout/fragment_dash_board" >
         <action
             android:id="@+id/action_dashBoardFragment_to_editOrAddFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/editOrAddFragment"
         android:name="com.lunartechnolabs.todolist.presentation.editordelete.EditOrAddFragment"
-        android:label="fragment_edit_or_add"
+        android:label=""
         tools:layout="@layout/fragment_edit_or_add" >
         <argument
             android:name="TaskData"

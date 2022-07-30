@@ -1,6 +1,6 @@
 ## Android Project: ToDoList 
 
-## MVVM + Hilt + Flow + RoomDatabase + Navigation Component + Clean Architecture
+## MVVM + Hilt + Flow + Coroutine + RoomDatabase + Navigation Component + Clean Architecture
 
 ## App Screenshots
 <table>

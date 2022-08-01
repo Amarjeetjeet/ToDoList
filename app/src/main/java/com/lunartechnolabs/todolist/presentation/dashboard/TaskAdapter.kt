@@ -1,6 +1,7 @@
 package com.lunartechnolabs.todolist.presentation.dashboard
 
 
+import android.content.res.Resources
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -24,14 +25,14 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
         val task = taskList[position]
 
         when (task.priority) {
-            "High" -> {
-                holder.binding.title.setTextColor(Color.RED)
+            "Urgent" -> {
+                holder.binding.priorityBar.setBackgroundColor(Color.RED)
             }
             "Medium" -> {
-                holder.binding.title.setTextColor(Color.GREEN)
+                holder.binding.priorityBar.setBackgroundColor(Color.GREEN)
             }
             else -> {
-                holder.binding.title.setTextColor(Color.BLACK)
+                holder.binding.priorityBar.setBackgroundColor(Color.BLACK)
             }
         }
 
@@ -50,7 +51,6 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
             if(taskList.isNotEmpty() && taskList.size > position) {
                 taskList.removeAt(position)
                 notifyItemRemoved(position)
-                notifyDataSetChanged()
             }
             if(taskList.size == 0){
 

@@ -62,7 +62,7 @@ class EditOrAddFragment : Fragment() {
                     edtDate.setText(it.taskDate)
 
                     when (it.priority) {
-                        "High" -> {
+                        "Urgent" -> {
                             radioButton3.isChecked = true
                         }
                         "Medium" -> {

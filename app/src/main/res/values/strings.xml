@@ -2,10 +2,13 @@
     <string name="app_name">TodoList</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="label_3">High</string>
+    <string name="label_3">Urgent</string>
     <string name="label_2">Medium</string>
     <string name="label_1">Low</string>
     <string name="description">Description</string>
     <string name="task_date">Task Date</string>
     <string name="task_time">Task Time</string>
+    <string name="title">title</string>
+    <string name="due">Due</string>
+    <string name="add_task">add TAsk</string>
 </resources>

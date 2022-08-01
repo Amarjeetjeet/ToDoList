@@ -7,7 +7,7 @@ import com.lunartechnolabs.todolist.domain.model.Task
 @Dao
 interface AppDao {
 
-    @Query("SELECT * FROM Task_table")
+    @Query("SELECT * FROM Task_table ORDER BY priority DESC")
     fun getTask(): MutableList<Task>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

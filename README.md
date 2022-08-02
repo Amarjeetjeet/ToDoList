@@ -12,8 +12,8 @@
   </tr>
   <tr>
     <td valign="top">
-      <a target="_blank" rel="noopener noreferrer" href="https://github.com/Amarjeetjeet/ToDoList/blob/main/result/1_.png">
-        <img src="https://github.com/Amarjeetjeet/ToDoList/blob/main/result/1_.png" style="max-width: 100%;">
+      <a target="_blank" rel="noopener noreferrer" href="https://github.com/Amarjeetjeet/ToDoList/blob/main/result/1.png">
+        <img src="https://github.com/Amarjeetjeet/ToDoList/blob/main/result/1.png" style="max-width: 100%;">
       </a>
     </td>
     <td valign="top"><a target="_blank" rel="noopener noreferrer" href="https://github.com/Amarjeetjeet/ToDoList/blob/main/result/2_.png">

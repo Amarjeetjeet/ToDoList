@@ -1,5 +1,11 @@
 package com.lunartechnolabs.todolist.data.db
 
+/**
+ * Database create and db instance initialized
+ * Database model name = Task (where table and column present)
+ * Database version = 1
+ * Database export = false
+ */
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room

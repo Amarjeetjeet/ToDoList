@@ -31,7 +31,7 @@
     </fragment>
     <dialog
         android:id="@+id/viewTask"
-        android:name="com.lunartechnolabs.todolist.ViewTask"
+        android:name="com.lunartechnolabs.todolist.presentation.viewtask.ViewTask"
         android:label="fragment_view_task"
         tools:layout="@layout/fragment_view_task" >
         <argument

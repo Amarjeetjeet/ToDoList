@@ -1,4 +1,4 @@
-package com.lunartechnolabs.todolist
+package com.lunartechnolabs.todolist.presentation.viewtask
 
 import android.annotation.SuppressLint
 import android.graphics.Color

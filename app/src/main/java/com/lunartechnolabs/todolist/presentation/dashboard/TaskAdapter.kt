@@ -1,7 +1,6 @@
 package com.lunartechnolabs.todolist.presentation.dashboard
 
 
-import android.content.res.Resources
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +39,7 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
 
         holder.itemView.setOnClickListener {
             listener.itemClick(it, position, task)
+            notifyDataSetChanged()
         }
 
         holder.itemView.setOnLongClickListener {
@@ -53,12 +53,11 @@ class TaskAdapter(private val listener: OnItemClickListener) : RecyclerView.Adap
                 notifyItemRemoved(position)
             }
             if(taskList.size == 0){
-
                 taskList.clear()
             }
             listener.btnClick(it,position,task)
+            notifyDataSetChanged()
         }
-
     }
 
     override fun getItemCount(): Int {

@@ -52,6 +52,7 @@ class EditOrAddFragment : Fragment() {
         }
     }
 
+    //Update task
     private fun updateTask() {
         binding.addArticleBtn.text = "Update Task"
             binding.apply {
@@ -93,6 +94,7 @@ class EditOrAddFragment : Fragment() {
         }
     }
 
+    //Add task
     private fun addTask() {
         binding.addArticleBtn.setOnClickListener {
 

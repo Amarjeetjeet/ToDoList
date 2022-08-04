@@ -12,6 +12,11 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+
+
+/**
+ * Providing LocalModule dependency for DI
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 @TypeConverters(Converter::class, ListConverter::class)

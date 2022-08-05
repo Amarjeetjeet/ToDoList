@@ -5,7 +5,7 @@
 ## App Screenshots
 <table>
   <tbody><tr>
-    <td>Dashboard</td>
+    <td>Dashboard (All task) </td>
      <td>DatePicker in Add Task</td>
      <td>TimePicker in Add Task</td>
      <td>Add Task</td>

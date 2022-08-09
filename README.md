@@ -107,7 +107,6 @@ Your team can add new features even more quickly.
   </li>
   </ul>
   
-Proguard added 2.0
 ## Under development
 
   
